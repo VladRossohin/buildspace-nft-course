@@ -2,17 +2,14 @@ const main = async () => {
   const [deployer] = await hre.ethers.getSigners();
   const accountBalance = await deployer.getBalance();
 
-  console.log("Deploying with account: ", deployer.address);
   console.log(
     "Account balance: ",
     hre.ethers.utils.formatEther(accountBalance)
   );
 
+  console.log("Deploying with account: ", deployer.address);
   const nftContractFactory = await hre.ethers.getContractFactory("MyEpicNFT");
-  const nftContract = await nftContractFactory.deploy({
-    value: hre.ethers.utils.parseEther("0.001"),
-    // gasPrice: "1000000",
-  });
+  const nftContract = await nftContractFactory.deploy({});
   await nftContract.deployed();
   console.log("Contract deployed to:", nftContract.address);
 

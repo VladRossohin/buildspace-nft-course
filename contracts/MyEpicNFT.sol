@@ -83,7 +83,7 @@ contract MyEpicNFT is ERC721URIStorage {
         "Slides"
     ];
 
-    constructor() payable ERC721("RossohinNFT", "ROSSOHIN") {
+    constructor() ERC721("RossohinNFT", "ROSSOHIN") {
         console.log("NFT contract sheesh");
     }
 
